@@ -1,7 +1,7 @@
 <template>
-  <footer class="bg-white text-center py-8">
+  <footer class="bg-white text-center py-10 ">
     <!-- Top Section: Store Info and Social Media -->
-    <div class="container mx-auto px-4 mb-8 text-black">
+    <div class="container mx-auto px-4 mb-8 text-black border-t border-gray-200">
       <h2 class="text-lg font-bold mb-4">Our Store</h2>
       <p class="mb-2">Viru tn 21, Old Town<br>Tallinn, Estonia</p>
       <p class="mb-4">Mon - Sun 11:00 - 19:00</p>
