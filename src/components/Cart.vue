@@ -136,18 +136,18 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  overflow: hidden;
 }
 
 .cart-content {
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 500px;
   height: 100%;
   background-color: white;
-  z-index: 1001;
+  z-index: 1100;
   overflow-y: auto;
+
 }
 
 .cart-header {

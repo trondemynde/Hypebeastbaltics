@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const productRoutes = require('./routes/productRoutes');
 const app = express();
 
 // Middleware
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/products', productRoutes);
 app.use('/api/users', require('./routes/userRoutes'));
 
 // Start the server

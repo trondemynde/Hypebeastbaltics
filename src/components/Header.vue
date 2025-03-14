@@ -2,7 +2,7 @@
   <header :class="{'header-scrolled': isScrolled, 'scaled-header': isScrolled}" class="header">
     <!-- Top Gray Bar -->
     <div v-if="!isScrolled" class="top-bar bg-gray-800 text-center py-2 flex items-center justify-center relative mx-auto">
-      <div class="container mx-auto px-4 flex justify-between items-center transition-all duration-300">
+      <div class="container mx-auto px-4 flex justify-between items-center duration-300">
       <a href="https://www.instagram.com/hypebeastbaltics/" class="flex items-center text-white">
         <svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" width="35" height="35" stroke="#ffffff" class="scalable-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 5H9.5C7.29086 5 5.5 6.79086 5.5 9V15C5.5 17.2091 7.29086 19 9.5 19H15.5C17.7091 19 19.5 17.2091 19.5 15V9C19.5 6.79086 17.7091 5 15.5 5Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 15C10.8431 15 9.5 13.6569 9.5 12C9.5 10.3431 10.8431 9 12.5 9C14.1569 9 15.5 10.3431 15.5 12C15.5 12.7956 15.1839 13.5587 14.6213 14.1213C14.0587 14.6839 13.2956 15 12.5 15Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="15.5" y="9" width="2" height="2" rx="1" transform="rotate(-90 15.5 9)" fill="#ffffff"></rect> <rect x="16" y="8.5" width="1" height="1" rx="0.5" transform="rotate(-90 16 8.5)" stroke="#ffffff" stroke-linecap="round"></rect> </g></svg>
         <span class="ml-1 font-bold">10,5K</span>
@@ -191,7 +191,7 @@ export default {
   transform-origin: top;
 }
 .header-index{
-  z-index: 1001;
+  z-index: 1000;
 }
 
 .scaled-header {
@@ -239,7 +239,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1000;
+  z-index: 990;
 }
 
 
@@ -259,7 +259,7 @@ export default {
   border: 1px solid #000000;
   border-radius: 4px;
   overflow: hidden;
-  z-index: 1001;
+  z-index: 1100;
 }
 
 .search-bar input {
