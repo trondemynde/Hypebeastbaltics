@@ -1,5 +1,8 @@
 <template>
+  <!-- Cart Modal -->
+  <Cart ref="cartModal" />
   <header :class="{'header-scrolled': isScrolled, 'scaled-header': isScrolled}" class="header">
+
     <!-- Top Gray Bar -->
     <div v-if="!isScrolled" class="top-bar bg-gray-800 text-center py-2 flex items-center justify-center relative mx-auto">
       <div class="container mx-auto px-4 flex justify-between items-center duration-300">
@@ -86,8 +89,7 @@
       </transition>
        <!-- Overlay -->
       <div v-if="isSearchOpen" class="overlay"></div>
-      <!-- Cart Modal -->
-      <Cart ref="cartModal" />
+
     </nav>
   </header>
 </template>
@@ -189,13 +191,14 @@ export default {
   background-color: rgb(255, 255, 255);
   transition: all 0.3s ease;
   transform-origin: top;
+  z-index: 10000;
 }
 .header-index{
   z-index: 1000;
 }
 
 .scaled-header {
-  transform: scaleY(0.95);
+  transform: scaleY(0.90);
   transition: transform 0.3s ease;
 }
 
