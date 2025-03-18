@@ -25,15 +25,15 @@
         </button>
       </div>
       <a href="https://g.co/kgs/SvPR9Aw">
-        <span style="margin-right:5px" class="google-rating" aria-hidden="true">5.0 on Google</span>
+        <span style="margin-right:5px" class="google-rating underline" aria-hidden="true">5.0 on Google</span>
     
         <span class="google-stars" aria-label="Rated 5.0 out of 5," role="img"><span style="width:70px"></span> </span>
       </a>
       </div>
     </div>
-
+    <div class="border-b border-gray-300">
     <!-- Main Header -->
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300 header-index">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300 header-index ">
 
       <!-- Logo -->
       <router-link v-if="!isSearchOpen" to="/">
@@ -91,6 +91,7 @@
       <div v-if="isSearchOpen" class="overlay"></div>
 
     </nav>
+    </div>
   </header>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
-  <div class="product-card hover:underline">
+  <div class="product-card">
     <div class="image-container">
       <img :src="product.image" alt="Product Image" class="product-image main-image">
       <img :src="product.hoverImage" alt="Hover Image" class="product-image hover-image">
     </div>
     <div class="product-details">
-      <h3 class=" ">{{ product.name }}</h3>
-      <p>€{{ product.price }}</p>
+      <h3>{{ product.name }}</h3>
+      <p class="font-bold">€{{ product.price }}</p>
     </div>
   </div>
 </template>
@@ -69,6 +69,9 @@ export default {
   opacity: 1; /* Fade in the hover image */
 }
 
+.product-card:hover .product-details h3 {
+  text-decoration: underline;
+}
 
 .product-details h3 {
   font-size: 1rem;
