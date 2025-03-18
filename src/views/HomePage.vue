@@ -16,11 +16,7 @@
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">New Arrivals</h2>
         <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard 
-            v-for="(product, index) in newProducts" 
-            :key="index" 
-            :product="product" 
-          />
+          <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
       </div>
     </section>
@@ -30,11 +26,7 @@
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">Best Sellers</h2>
         <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard 
-            v-for="(product, index) in bestSellers" 
-            :key="index" 
-            :product="product" 
-          />
+          <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
       </div>
     </section>
@@ -44,11 +36,7 @@
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">Used Deals</h2>
         <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard 
-            v-for="(product, index) in usedProducts" 
-            :key="index" 
-            :product="product" 
-          />
+          <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
       </div>
     </section>
@@ -66,11 +54,7 @@
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">Collections</h2>
         <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard 
-            v-for="(product, index) in usedProducts" 
-            :key="index" 
-            :product="product" 
-          />
+          <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
       </div>
     </section>
@@ -80,11 +64,7 @@
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">Under 200€</h2>
         <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard 
-            v-for="(product, index) in usedProducts" 
-            :key="index" 
-            :product="product" 
-          />
+          <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
       </div>
     </section>
@@ -106,15 +86,35 @@ export default {
   components: { ProductCard, Carousel },
   data() {
     return {
-      newProducts: [
-        { 
-          id: 1, 
-          name: 'Nike Air Force 1 Low', 
-          price: '€230', 
-          image: 'https://via.placeholder.com/300',
-          description: 'Supreme collaboration in black'
+      products: [
+      {
+          id: 1,
+          name: 'Nike x NOCTA Track Jacket Dark Wine/Black',
+          price: 250,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
         },
-        // Add more products
+        {
+          id: 2,
+          name: 'Used Ralph Lauren Black Puffer Jacket',
+          price: 190,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
+        {
+          id: 3,
+          name: 'Used Jordan 6 Retro Gatorade Like Mike White',
+          price: 150,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
+        {
+          id: 4,
+          name: 'Used Nike SB Dunk Low TIGHTBOOTH',
+          price: 200,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        }
       ],
       bestSellers: [
         // Product data
