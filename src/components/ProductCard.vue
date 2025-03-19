@@ -7,6 +7,8 @@
     <div class="product-details">
       <h3>{{ product.name }}</h3>
       <p class="font-bold">€{{ product.price }}</p>
+            <!-- Conditional Button -->
+      <button v-if="product.hasOptions" class="choose-options-btn w-full font-bold">Choose Options</button>
     </div>
   </div>
 </template>
@@ -21,7 +23,8 @@ export default {
         name: 'Product Name',
         price: 0,
         image: 'default-image-url.jpg',
-        hoverImage: 'hover-image-url.jpg'
+        hoverImage: 'hover-image-url.jpg',
+        hasOptions: false
       })
     }
   }
@@ -80,5 +83,22 @@ export default {
 
 .product-details p {
   font-size: 0.9rem;
+}
+
+.choose-options-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff; /* Blue background */
+  color: black; /* White text */
+  border: 1px solid black; /* Blue border */
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.choose-options-btn:hover {
+  transform: scale(1.05); /* Scale up on hover */
 }
 </style>

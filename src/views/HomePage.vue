@@ -15,8 +15,12 @@
     <section class="new-arrivals py-12 bg-gray-100 text-black">
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">New Arrivals</h2>
-        <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard v-for="product in products" :key="product.id" :product="product" />
+        <div class="grid gap-6 md:grid-cols-4 md:grid-rows-1 overflow-hidden">
+          <ProductCard
+            v-for="product in products.slice(0, 4)"
+            :key="product.id"
+            :product="product"
+            />
         </div>
         <div class="text-center mt-4">
           <button class="text-black hover:font-bold underline">View All</button>
@@ -28,8 +32,8 @@
     <section class="best-sellers py-12 bg-gray-100 text-black">
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">Best Sellers</h2>
-        <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard v-for="product in products" :key="product.id" :product="product" />
+        <div class="grid gap-6 md:grid-cols-4 md:grid-rows-1">
+          <ProductCard v-for="product in products.slice(0, 8)" :key="product.id" :product="product" />
         </div>
         <div class="text-center mt-4">
           <button class="text-black hover:font-bold underline">View All</button>
@@ -38,15 +42,15 @@
     </section>
 
     <!-- Used Deals -->
-    <section class="used-deals py-12 bg-gray-100 text-black">
+    <section class="used-deals py-12 bg-gray-100 text-black w-full">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-8">Used Deals</h2>
-        <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard v-for="product in products" :key="product.id" :product="product" />
-        </div>
-        <div class="text-center mt-4">
-          <button class="text-black hover:font-bold underline">View All</button>
-        </div>
+      <h2 class="text-3xl font-bold mb-8">Used Deals</h2>
+      </div>
+      <HorizontalScroll>
+      <ProductCard v-for="product in products.slice(0, 8)" :key="product.id" :product="product" />
+      </HorizontalScroll>
+      <div class="container mx-auto text-center mt-4">
+      <button class="text-black hover:font-bold underline">View All</button>
       </div>
     </section>
 
@@ -55,57 +59,55 @@
       <div class="container mx-auto flex items-center h-full text-white">
       </div>
     </section>
-  </div>
 
-
-      <!-- Collections -->
-      <section class="collections py-12 bg-gray-100 text-black">
+    <!-- Collections -->
+    <section class="collections py-12 bg-gray-100 text-black">
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">Collections</h2>
         <div class="collections-grid">
-            <CollectionCard v-for="collection in collections" :key="collection.name" :collection="collection" />
-          </div>
+          <CollectionCard v-for="collection in collections" :key="collection.name" :collection="collection" />
+        </div>
       </div>
     </section>
 
-        <!-- Under 200 -->
-        <section class="cheapass py-12 bg-gray-100 text-black">
+    <!-- Under 200 -->
+    <section class="used-deals py-12 bg-gray-100 text-black w-full">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-8">Under 200€</h2>
-        <div class="grid gap-6 md:grid-cols-4">
-          <ProductCard v-for="product in products" :key="product.id" :product="product" />
-        </div>
-        <div class="text-center mt-4">
-          <button class="text-black hover:font-bold underline">View All</button>
-        </div>
+      <h2 class="text-3xl font-bold mb-8">Under 200€</h2>
+      </div>
+      <HorizontalScroll>
+      <ProductCard v-for="product in products.slice(0, 8)" :key="product.id" :product="product" />
+      </HorizontalScroll>
+      <div class="container mx-auto text-center mt-4">
+      <button class="text-black hover:font-bold underline">View All</button>
       </div>
     </section>
 
-        <!-- Promotional Message -->
+    <!-- Promotional Message -->
     <section class="hero h-140 bg-cover bg-center" :class="{ 'bg-[url(../assets/accessories.jpg)]': true }">
       <div class="container mx-auto flex items-center h-full text-white">
       </div>
     </section>
-
-    
+  </div>
 </template>
 
 <script>
 import ProductCard from '../components/ProductCard.vue';
 import Carousel from '../components/HomeCarousel.vue';
 import CollectionCard from '../components/CollectionCard.vue';
+import HorizontalScroll from '../components/HorizontalScroll.vue';
 
 export default {
-  components: { ProductCard, Carousel, CollectionCard },
+  components: { ProductCard, Carousel, CollectionCard, HorizontalScroll },
   data() {
     return {
       products: [
-      {
+        {
           id: 1,
           name: 'Nike x NOCTA Track Jacket Dark Wine/Black',
           price: 250,
           image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
-          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360',
         },
         {
           id: 2,
@@ -127,7 +129,49 @@ export default {
           price: 200,
           image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
           hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
-        }
+        },
+        {
+          id: 5,
+          name: 'Nike x NOCTA Track Jacket Dark Wine/Black',
+          price: 250,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
+        {
+          id: 6,
+          name: 'Used Ralph Lauren Black Puffer Jacket',
+          price: 190,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
+        {
+          id: 7,
+          name: 'Used Jordan 6 Retro Gatorade Like Mike White',
+          price: 150,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
+        {
+          id: 8,
+          name: 'Used Nike SB Dunk Low TIGHTBOOTH',
+          price: 200,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
+        {
+          id: 9,
+          name: 'Used Jordan 6 Retro Gatorade Like Mike White',
+          price: 150,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
+        {
+          id: 10,
+          name: 'Used Nike SB Dunk Low TIGHTBOOTH',
+          price: 200,
+          image: 'https://hypebeastbaltics.com/cdn/shop/files/nike-air-force-1-low-supreme-baroque-brown4.png?v=1724424246&width=360',
+          hoverImage: 'https://hypebeastbaltics.com/cdn/shop/files/air-force-1-low-black-supreme-538165_035370a3-f07e-4614-9639-d0e8920a9bfb.png?v=1740395425&width=360'
+        },
       ],
       collections: [
         {
@@ -155,12 +199,6 @@ export default {
           image: 'https://hypebeastbaltics.com/cdn/shop/collections/IMG_3032.jpg?v=1694639549&width=535',
           link: '/collections/yeezy'
         }
-      ],
-      bestSellers: [
-        // Product data
-      ],
-      usedProducts: [
-        // Product data
       ]
     };
   }
@@ -168,6 +206,7 @@ export default {
 </script>
 
 <style scoped>
+
 .collections-grid {
   display: flex;
   justify-content: space-around;
@@ -177,5 +216,25 @@ export default {
 .hero {
   background-size: cover;
   background-position: center;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.used-deals .flex {
+  display: flex;
+  gap: 1rem; /* Space between cards */
+  padding-bottom: 1rem; /* Prevent content from being cut off */
+}
+
+.ProductCard {
+  min-width: 250px; /* Set a fixed width for each card */
+  flex-shrink: 0; /* Prevent cards from shrinking */
 }
 </style>
